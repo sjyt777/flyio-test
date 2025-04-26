@@ -1,0 +1,32 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ログイン</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header">
+    <div class="title">KaigiNote</div>
+    <div class="nav-links">
+      <!-- このあたりにグローバルなリンクを配置しても良い -->
+      <a href="index.html">イベント一覧</a>
+      <a href="register.html">ユーザー登録</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>ログイン</h2>
+    <form onsubmit="alert('デモのため未実装です'); return false;">
+      <label for="email">メールアドレス</label>
+      <input type="text" id="email" />
+
+      <label for="password">パスワード</label>
+      <input type="password" id="password" />
+
+      <button type="submit">ログイン</button>
+    </form>
+  </div>
+</body>
+</html>

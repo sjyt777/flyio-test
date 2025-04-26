@@ -1,0 +1,60 @@
+<!-- event_detail.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>イベント詳細</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="renderEventDetail()">
+  <div class="header">
+    <div class="title">KaigiNote</div>
+    <div class="nav-links">
+      <a href="index.html">イベント一覧</a>
+      <a href="login.html">ログイン</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>イベント詳細</h2>
+    <p>日付: <span id="eventDate"></span></p>
+    <p>場所: <span id="eventPlace"></span></p>
+    <p>内容: <span id="eventContent"></span></p>
+    <p>ステータス: <span id="eventStatus"></span></p>
+
+    <div style="margin: 10px 0;">
+      <!-- 更新は別ページ(create_event.htmlと共通フォームにする等、要検討) -->
+      <button onclick="alert('更新画面へ遷移（デモ）')"
+              class="btn">編集</button>
+      <button onclick="deleteEvent()" class="btn delete">削除</button>
+    </div>
+
+    <h3>参加者リスト</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>名前</th>
+          <th>支払金額</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="participantTableBody">
+        <!-- JSで動的に挿入 -->
+      </tbody>
+    </table>
+
+    <h3>参加者追加</h3>
+    <form onsubmit="alert('デモのため未実装'); return false;">
+      <label>ユーザー選択(デモ)</label>
+      <input type="text" placeholder="例: David" />
+
+      <label>支払金額</label>
+      <input type="text" placeholder="1000" />
+
+      <button type="submit">追加</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

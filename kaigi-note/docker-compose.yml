@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: kaigi_note_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/usr/src/app
+    env_file:
+      - .env  # ← ここで一元管理いたします
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: kaigi_note_db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypass
+      POSTGRES_DB: kaigi_note
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  frontend:
+    build: ./frontend
+    container_name: kaigi_note_frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+      - ./frontend/public:/usr/src/app/public
+    env_file:
+      - .env
+    depends_on:
+      - backend
+
+volumes:
+  db_data:

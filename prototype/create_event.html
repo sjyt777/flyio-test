@@ -1,0 +1,43 @@
+<!-- create_event.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>イベント作成</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header">
+    <div class="title">KaigiNote</div>
+    <div class="nav-links">
+      <a href="index.html">イベント一覧</a>
+      <a href="login.html">ログイン</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>新規イベント</h2>
+    <form onsubmit="createEvent(); return false;">
+      <label for="dateInput">開催日</label>
+      <input type="date" id="dateInput" required />
+
+      <label for="placeInput">場所</label>
+      <input type="text" id="placeInput" required />
+
+      <label for="contentInput">内容</label>
+      <textarea id="contentInput" rows="4" required></textarea>
+
+      <label for="statusSelect">ステータス</label>
+      <select id="statusSelect">
+        <option value="planned">planned</option>
+        <option value="done">done</option>
+        <option value="canceled">canceled</option>
+      </select>
+
+      <button type="submit">登録</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>イベント一覧</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="renderEventList()">
+  <div class="header">
+    <div class="title">KaigiNote</div>
+    <div class="nav-links">
+      <a href="login.html">ログイン</a>
+      <a href="register.html">ユーザー登録</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>イベント一覧</h2>
+
+    <!-- 検索フォーム(デモ) -->
+    <form onsubmit="alert('デモのため未実装です'); return false;">
+      <label>検索キーワード(場所/内容など)</label>
+      <input type="text" />
+      <button type="submit">検索</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>日時</th>
+          <th>場所</th>
+          <th>ステータス</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="eventTableBody">
+        <!-- JSで動的に挿入 -->
+      </tbody>
+    </table>
+
+    <div style="margin-top: 20px;">
+      <a href="create_event.html" class="btn">+ 新規イベント</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
